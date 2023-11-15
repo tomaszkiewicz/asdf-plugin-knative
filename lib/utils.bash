@@ -42,7 +42,8 @@ download_release() {
 
   arch=$(uname -p | sed -e "s/x86_64/amd64/" -e "s/aarch64/arm64/")
 
-	url="$GH_REPO/releases/download/knative-v${version}/kn-linux-${arch}"
+  # https://github.com/knative/client/releases/download/knative-v1.11.2/kn-linux-amd64
+	url="$GH_REPO/releases/download/${version}/kn-linux-${arch}"
 
 	echo "* Downloading $TOOL_NAME release $version ($arch)..."
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
