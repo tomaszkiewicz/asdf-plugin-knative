@@ -40,7 +40,7 @@ download_release() {
 	version="$1"
 	filename="$2"
 
-  arch=$(uname -p | sed -e "s/x86_64/amd64/" -e "s/aarch64/arm64/")
+  arch=$(uname -p | sed -e "s/x86_64/amd64/" -e "s/aarch64/arm64/" -e "s/unknown/amd64/")
 
   # https://github.com/knative/client/releases/download/knative-v1.11.2/kn-linux-amd64
 	url="$GH_REPO/releases/download/knative-v${version}/kn-linux-${arch}"
